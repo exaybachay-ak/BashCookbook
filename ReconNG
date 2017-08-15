@@ -1,0 +1,9 @@
+#start the recon-ng framework
+recon-ng
+
+#set up your environment
+workspaces add myproject
+
+#add keys to your environment - start with google, twitter, linkedin, censys and shodan
+keys add shodan_api myapimaterialsgohereblablablabla
+keys add censys_api myapimaterialsgohereblablablabla
