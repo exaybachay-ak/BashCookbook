@@ -1,0 +1,2 @@
+#gather some OSINT for target organization
+theharvester -d <targetdomain> -l 1000 -b bing -h myTarget.html
