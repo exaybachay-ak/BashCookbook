@@ -1,0 +1,18 @@
+#do your updates and fix any missing packages
+sudo apt-get update && sudo apt-get update --fix-missing 
+
+#install tor
+sudo apt-get install tor
+
+#connecting to the network
+# NOTE: You must fix your datetime before connecting!!!
+tor
+
+proxychains firefox
+about:preferences
+advanced > network > connection settings
+    manual proxy configuration
+        SOCKS4 Proxy: 127.0.0.1     Port: 9050
+        
+        No proxy for:
+        <remove all entries here to enforce proxy settings>
